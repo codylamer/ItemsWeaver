@@ -5,40 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57dee27-8ef8-46f1-84bc-ca4f5f47a298" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/ItemsWeaver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/events/PackCompressedScriptEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Denizen-1.3.1-b7077-DEV.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/Depenizen-2.1.1-b864.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/streamizen/Streamizen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/streamizen/alerts/AlertsListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/streamizen/alerts/RateLimiter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/streamizen/events/bukkit/BukkitDonationAlertsEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/streamizen/events/bukkit/BukkitTwitchEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/streamizen/events/denizen/DenizenDonationAlertsEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/streamizen/events/denizen/DenizenTwitchEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tokens.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codylamer/streamizen/Streamizen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codylamer/streamizen/alerts/AlertsListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codylamer/streamizen/alerts/RateLimiter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codylamer/streamizen/events/bukkit/BukkitDonationAlertsEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codylamer/streamizen/events/bukkit/BukkitTwitchEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codylamer/streamizen/events/denizen/DenizenDonationAlertsEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/codylamer/streamizen/events/denizen/DenizenTwitchEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tokens.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-Streamizen-1.0.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +25,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="ItemsWeaver" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -183,6 +145,8 @@
       <workItem from="1750181354923" duration="34000" />
       <workItem from="1750181415049" duration="1256000" />
       <workItem from="1750182725730" duration="138000" />
+      <workItem from="1750185084203" duration="193000" />
+      <workItem from="1750185286728" duration="471000" />
     </task>
     <servers />
   </component>
