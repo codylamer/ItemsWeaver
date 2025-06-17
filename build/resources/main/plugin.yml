@@ -1,7 +1,0 @@
-name: ItemsWeaver
-version: 1.0.0
-main: com.codylamer.itemsweaver.ItemsWeaver
-api-version: 1.13
-depend: [Denizen, ItemsAdder]
-authors: [CodYLameR]
-description: Связка ItemsAdder с Denizen Script
