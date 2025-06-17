@@ -16,7 +16,7 @@ import org.bukkit.event.Listener;
 public class ResourcePackSendScriptEvent extends BukkitScriptEvent implements Listener {
 
     public ResourcePackSendScriptEvent() {
-        registerCouldMatcher("ia send resourcepack player");
+        registerCouldMatcher("ia send resourcepack to player");
     }
 
     ResourcePackSendEvent event;
@@ -33,7 +33,7 @@ public class ResourcePackSendScriptEvent extends BukkitScriptEvent implements Li
             case "player" -> player;
             case "url" -> new ElementTag(event.getUrl());
             case "hash" -> new ElementTag(event.getHash());
-            case "is_itemsadder_resourcepack" -> new ElementTag(event.isItemsAdderPack());
+            case "is_ia_resourcepack" -> new ElementTag(event.isItemsAdderPack());
             default -> super.getContext(name);
         };
     }
