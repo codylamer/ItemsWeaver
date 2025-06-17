@@ -2,7 +2,9 @@ package com.codylamer.itemsweaver.events;
 
 import com.denizenscript.denizen.events.BukkitScriptEvent;
 import com.denizenscript.denizencore.objects.ObjectTag;
+
 import dev.lone.itemsadder.api.Events.ItemsAdderPackCompressedEvent;
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
@@ -10,7 +12,7 @@ import org.bukkit.event.Listener;
 public class PackCompressedScriptEvent extends BukkitScriptEvent implements Listener {
 
     public PackCompressedScriptEvent() {
-        registerCouldMatcher("ia resource pack compressed");
+        registerCouldMatcher("ia resourcepack compressed");
     }
 
     ItemsAdderPackCompressedEvent event;
