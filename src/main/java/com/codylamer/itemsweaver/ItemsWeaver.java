@@ -60,6 +60,7 @@ public class ItemsWeaver extends JavaPlugin {
 
         ScriptEvent.registerScriptEvent(CustomBlockBreakScriptEvent.class);
         ScriptEvent.registerScriptEvent(CustomBlockPlaceScriptEvent.class);
+        ScriptEvent.registerScriptEvent(CustomBlockInteractScriptEvent.class);
     }
 
     private boolean isPluginAvailable(String pluginName) {

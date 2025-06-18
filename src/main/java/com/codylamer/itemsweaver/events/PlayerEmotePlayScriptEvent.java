@@ -18,13 +18,14 @@ public class PlayerEmotePlayScriptEvent extends BukkitScriptEvent implements Lis
 
     PlayerEmotePlayEvent event;
     PlayerTag player;
+    ElementTag emote;
 
     @Override
     public boolean matches(ScriptPath path) {
         if (!runInCheck(path, event.getPlayer().getLocation())) {
             return false;
         }
-        if (!path.eventArgLowerAt(3).equals("emote") && !(path.eventArgLowerAt(3).equals(event.getEmoteName()))) {
+        if (!path.eventArgLowerAt(3).equals("emote") && !(path.eventArgLowerAt(3).equals(emote.asString()))) {
             return false;
         }
         return super.matches(path);
@@ -34,7 +35,7 @@ public class PlayerEmotePlayScriptEvent extends BukkitScriptEvent implements Lis
     public ObjectTag getContext(String name) {
         return switch (name) {
             case "player" -> player;
-            case "emote" -> new ElementTag(event.getEmoteName());
+            case "emote" -> emote;
             default -> super.getContext(name);
         };
     }
@@ -48,6 +49,7 @@ public class PlayerEmotePlayScriptEvent extends BukkitScriptEvent implements Lis
     public void onPlayerPlayEmote(PlayerEmotePlayEvent event) {
         this.event = event;
         player = new PlayerTag(event.getPlayer());
+        emote = new ElementTag(event.getEmoteName());
         fire(event);
     }
 }

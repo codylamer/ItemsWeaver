@@ -21,9 +21,7 @@ public class CustomBlockPlaceScriptEvent extends BukkitScriptEvent implements Li
     }
 
     CustomBlockPlaceEvent event;
-    LocationTag location;
     PlayerTag player;
-    MaterialTag material;
     MaterialTag old_material;
     ElementTag namespaced;
     ElementTag id;
@@ -49,13 +47,13 @@ public class CustomBlockPlaceScriptEvent extends BukkitScriptEvent implements Li
     public ObjectTag getContext(String name) {
         return switch (name) {
             case "player" -> player;
-            case "location" -> location;
+            case "location" -> new LocationTag(event.getBlock().getLocation());
             case "namespaced" -> namespaced;
             case "id" -> id;
-            case "material" -> material;
+            case "material" -> new MaterialTag(event.getBlock());
             case "old_material" -> old_material;
             case "item_in_hand" -> new ItemTag(event.getItemInHand());
-            case "item" -> new ItemTag(event.getCustomBlockItem());
+            case "ia_item" -> new ItemTag(event.getCustomBlockItem());
             case "can_build" -> new ElementTag(event.isCanBuild());
             case "old_block_state" -> new ElementTag(event.getReplacedBlockState().toString());
             case "against" -> new LocationTag(event.getPlacedAgainst().getLocation());
@@ -71,12 +69,10 @@ public class CustomBlockPlaceScriptEvent extends BukkitScriptEvent implements Li
     @EventHandler
     public void onPlayerPlaceCustomBlock(CustomBlockPlaceEvent event) {
         this.event = event;
-        material = new MaterialTag(event.getBlock());
         old_material = new MaterialTag(event.getPlacedAgainst());
         namespaced = new ElementTag(event.getNamespacedID().split(":")[0]);
         id = new ElementTag(event.getNamespacedID().split(":")[1]);
         player = new PlayerTag(event.getPlayer());
-        location = new LocationTag(event.getBlock().getLocation());
         fire(event);
     }
 }

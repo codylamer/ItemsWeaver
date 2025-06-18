@@ -11,15 +11,15 @@ import org.bukkit.event.Listener;
 public class LoadDataScriptEvent extends BukkitScriptEvent implements Listener {
 
     public LoadDataScriptEvent() {
-        registerCouldMatcher("ia load data");
-        registerSwitches("cause");
+        registerCouldMatcher("ia load data (because <'cause'>)");
     }
 
     ItemsAdderLoadDataEvent event;
+    ElementTag cause;
 
     @Override
     public boolean matches(ScriptPath path) {
-        if (!runGenericSwitchCheck(path, "cause", event.getCause().name())) {
+        if (path.eventArgLowerAt(3).equals("because") && !runGenericCheck(path.eventArgLowerAt(4), cause.asString())) {
             return false;
         }
         return super.matches(path);
@@ -28,7 +28,7 @@ public class LoadDataScriptEvent extends BukkitScriptEvent implements Listener {
     @Override
     public ObjectTag getContext(String name) {
         return switch (name) {
-            case "cause" -> new ElementTag(event.getCause().name());
+            case "cause" -> cause;
             default -> super.getContext(name);
         };
     }
@@ -36,6 +36,7 @@ public class LoadDataScriptEvent extends BukkitScriptEvent implements Listener {
     @EventHandler
     public void onLoadData(ItemsAdderLoadDataEvent event) {
         this.event = event;
+        cause = new ElementTag(event.getCause());
         fire(event);
     }
 }

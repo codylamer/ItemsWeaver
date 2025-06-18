@@ -13,22 +13,23 @@ import org.bukkit.event.Listener;
 public class PlayerEmoteEndScriptEvent extends BukkitScriptEvent implements Listener {
 
     public PlayerEmoteEndScriptEvent() {
-        registerCouldMatcher("ia player finish <'emote'>");
-        registerSwitches("cause");
+        registerCouldMatcher("ia player finish <'emote'> (because <'cause'>)");
     }
 
     PlayerEmoteEndEvent event;
     PlayerTag player;
+    ElementTag emote;
+    ElementTag cause;
 
     @Override
     public boolean matches(ScriptPath path) {
         if (!runInCheck(path, event.getPlayer().getLocation())) {
             return false;
         }
-        if (!path.eventArgLowerAt(3).equals("emote") && !(path.eventArgLowerAt(3).equals(event.getEmoteName()))) {
+        if (!path.eventArgLowerAt(3).equals("emote") && !(path.eventArgLowerAt(3).equals(emote.asString()))) {
             return false;
         }
-        if (!runGenericSwitchCheck(path, "cause", event.getCause().name())) {
+        if (path.eventArgLowerAt(4).equals("because") && !runGenericCheck(path.eventArgLowerAt(5), cause.asString())) {
             return false;
         }
         return super.matches(path);
@@ -38,8 +39,8 @@ public class PlayerEmoteEndScriptEvent extends BukkitScriptEvent implements List
     public ObjectTag getContext(String name) {
         return switch (name) {
             case "player" -> player;
-            case "emote" -> new ElementTag(event.getEmoteName());
-            case "cause" -> new ElementTag(event.getCause());
+            case "emote" -> emote;
+            case "cause" -> cause;
             default -> super.getContext(name);
         };
     }
@@ -53,6 +54,8 @@ public class PlayerEmoteEndScriptEvent extends BukkitScriptEvent implements List
     public void onPlayerEndEmote(PlayerEmoteEndEvent event) {
         this.event = event;
         player = new PlayerTag(event.getPlayer());
+        emote = new ElementTag(event.getEmoteName());
+        cause = new ElementTag(event.getCause());
         fire(event);
     }
 }
