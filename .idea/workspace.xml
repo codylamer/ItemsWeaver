@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f57dee27-8ef8-46f1-84bc-ca4f5f47a298" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/events/CustomBlockBreakScriptEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/events/CustomBlockPlaceScriptEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.13/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/ItemsWeaver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/ItemsWeaver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/events/CustomBlockBreakScriptEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codylamer/itemsweaver/events/CustomBlockBreakScriptEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,26 +70,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.C:/Users/megan/OneDrive/Рабочий стол/Projects/ItemsWeaver [build].executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.ItemWeaver [clean].executor": "Run",
-    "Gradle.ItemsWeaver [build].executor": "Run",
-    "Gradle.Load Gradle Dependencies.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/megan/OneDrive/Рабочий стол/Projects/ItemsWeaver/src/main/java/com/codylamer/itemsweaver/events",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.C:/Users/megan/OneDrive/Рабочий стол/Projects/ItemsWeaver [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ItemWeaver [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ItemsWeaver [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Load Gradle Dependencies.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/megan/OneDrive/Рабочий стол/Projects/ItemsWeaver/src/main/java/com/codylamer/itemsweaver/events&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\megan\OneDrive\Рабочий стол\Projects\ItemsWeaver\src\main\java\com\codylamer\itemsweaver\events" />
@@ -194,6 +202,8 @@
       <workItem from="1750185886233" duration="4235000" />
       <workItem from="1750192916341" duration="5774000" />
       <workItem from="1750246809059" duration="591000" />
+      <workItem from="1750247422943" duration="6558000" />
+      <workItem from="1750266936037" duration="3666000" />
     </task>
     <servers />
   </component>

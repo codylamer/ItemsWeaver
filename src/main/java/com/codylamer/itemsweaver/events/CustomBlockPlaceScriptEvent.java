@@ -1,30 +1,30 @@
 package com.codylamer.itemsweaver.events;
 
 import com.denizenscript.denizen.events.BukkitScriptEvent;
+import com.denizenscript.denizen.objects.ItemTag;
+import com.denizenscript.denizen.objects.LocationTag;
+import com.denizenscript.denizen.objects.MaterialTag;
 import com.denizenscript.denizen.objects.PlayerTag;
-import com.denizenscript.denizen.objects.*;
 import com.denizenscript.denizen.utilities.implementation.BukkitScriptEntryData;
 import com.denizenscript.denizencore.objects.ObjectTag;
 import com.denizenscript.denizencore.objects.core.ElementTag;
 import com.denizenscript.denizencore.scripts.ScriptEntryData;
-import dev.lone.itemsadder.api.Events.CustomBlockBreakEvent;
+import dev.lone.itemsadder.api.Events.CustomBlockPlaceEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import com.denizenscript.denizencore.utilities.debugging.Debug;
 
-import org.bukkit.plugin.java.JavaPlugin;
+public class CustomBlockPlaceScriptEvent extends BukkitScriptEvent implements Listener {
 
-public class CustomBlockBreakScriptEvent extends BukkitScriptEvent implements Listener {
-
-    public CustomBlockBreakScriptEvent() {
-        registerCouldMatcher("ia player breaks block");
-        registerSwitches("namespaced", "id", "with");
+    public CustomBlockPlaceScriptEvent() {
+        registerCouldMatcher("ia player places block");
+        registerSwitches("namespaced", "id", "against");
     }
 
-    CustomBlockBreakEvent event;
+    CustomBlockPlaceEvent event;
     LocationTag location;
     PlayerTag player;
     MaterialTag material;
+    MaterialTag old_material;
     ElementTag namespaced;
     ElementTag id;
 
@@ -39,7 +39,7 @@ public class CustomBlockBreakScriptEvent extends BukkitScriptEvent implements Li
         if (!runGenericSwitchCheck(path, "id", id.asString())) {
             return false;
         }
-        if (!runWithCheck(path, new ItemTag(event.getPlayer().getEquipment().getItemInMainHand()))) {
+        if (!runGenericSwitchCheck(path, "against", old_material.name())) {
             return false;
         }
         return super.matches(path);
@@ -53,7 +53,12 @@ public class CustomBlockBreakScriptEvent extends BukkitScriptEvent implements Li
             case "namespaced" -> namespaced;
             case "id" -> id;
             case "material" -> material;
+            case "old_material" -> old_material;
+            case "item_in_hand" -> new ItemTag(event.getItemInHand());
             case "item" -> new ItemTag(event.getCustomBlockItem());
+            case "can_build" -> new ElementTag(event.isCanBuild());
+            case "old_block_state" -> new ElementTag(event.getReplacedBlockState().toString());
+            case "against" -> new LocationTag(event.getPlacedAgainst().getLocation());
             default -> super.getContext(name);
         };
     }
@@ -64,12 +69,13 @@ public class CustomBlockBreakScriptEvent extends BukkitScriptEvent implements Li
     }
 
     @EventHandler
-    public void onPlayerBreakCustomBlock(CustomBlockBreakEvent event) {
+    public void onPlayerPlaceCustomBlock(CustomBlockPlaceEvent event) {
         this.event = event;
+        material = new MaterialTag(event.getBlock());
+        old_material = new MaterialTag(event.getPlacedAgainst());
         namespaced = new ElementTag(event.getNamespacedID().split(":")[0]);
         id = new ElementTag(event.getNamespacedID().split(":")[1]);
         player = new PlayerTag(event.getPlayer());
-        material = new MaterialTag(event.getBlock());
         location = new LocationTag(event.getBlock().getLocation());
         fire(event);
     }

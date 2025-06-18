@@ -59,6 +59,7 @@ public class ItemsWeaver extends JavaPlugin {
         ScriptEvent.registerScriptEvent(PlayerEmoteEndScriptEvent.class);
 
         ScriptEvent.registerScriptEvent(CustomBlockBreakScriptEvent.class);
+        ScriptEvent.registerScriptEvent(CustomBlockPlaceScriptEvent.class);
     }
 
     private boolean isPluginAvailable(String pluginName) {
