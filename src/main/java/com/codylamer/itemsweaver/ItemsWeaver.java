@@ -18,7 +18,7 @@ public class ItemsWeaver extends JavaPlugin {
         instance = this;
 
         getLogger().info("║ ■=■=■=■=■=■=■=■=■=■=■=■=■=■=■=■=■=■=■=■");
-        getLogger().info("║ ItemsWeaver");
+        getLogger().info("║ ItemsWeaver ");
 
         if (isPluginAvailable("Denizen")) {
             getLogger().severe("║ Denizen is not installed! ║");
