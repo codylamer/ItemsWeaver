@@ -22,6 +22,7 @@ public class ItemsWeaver extends JavaPlugin {
         ScriptEvent.registerScriptEvent(LoadDataScriptEvent.class);
         ScriptEvent.registerScriptEvent(PlayerEmotePlayScriptEvent.class);
         ScriptEvent.registerScriptEvent(PlayerEmoteEndScriptEvent.class);
+        ScriptEvent.registerScriptEvent(CustomBlockBreakScriptEvent.class);
 
         Debug.log("ItemsWeaver loaded!");
     }
