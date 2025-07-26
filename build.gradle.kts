@@ -3,6 +3,15 @@ plugins {
     `maven-publish`
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+tasks.withType<JavaCompile>().configureEach {
+    options.release.set(21)
+}
+
 repositories {
     mavenLocal()
 
@@ -37,12 +46,11 @@ dependencies {
     implementation("dev.lone:api-itemsadder:${project.properties["api-itemsadder.version"]}")
 }
 
-group = "com.codylamer"
-version = "1.0.0"
-description = "ItemsWeaver"
-java.sourceCompatibility = JavaVersion.VERSION_17
+fun buildNumber(): String = project.findProperty("BUILD_NUMBER") as? String ?: "UNKNOWN"
 
-fun buildNumber(): String = System.getenv("BUILD_NUMBER") ?: "UNKNOWN"
+group = "com.codylamer"
+version = buildNumber() + "-DEV"
+description = "ItemsWeaver"
 
 publishing {
     publications.create<MavenPublication>("maven") {
@@ -60,6 +68,6 @@ tasks.withType<Javadoc>() {
 
 tasks.processResources {
     filesMatching("plugin.yml") {
-        expand(mapOf("BUILD_NUMBER" to System.getenv("BUILD_NUMBER")))
+        expand(mapOf("version" to project.properties["BUILD_NUMBER"]))
     }
 }

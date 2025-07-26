@@ -10,9 +10,6 @@ import com.denizenscript.denizencore.scripts.ScriptEntryData;
 import dev.lone.itemsadder.api.Events.CustomBlockBreakEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import com.denizenscript.denizencore.utilities.debugging.Debug;
-
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class CustomBlockBreakScriptEvent extends BukkitScriptEvent implements Listener {
 
